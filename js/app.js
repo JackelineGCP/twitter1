@@ -9,6 +9,7 @@ var contador = 0;
 var total;
 
 textconte.setAttribute('style','visibility:hidden');
+count.setAttribute('style','color:blue');
 
 //defino mis eventos
 boton.addEventListener("click",function(){
@@ -36,7 +37,10 @@ boton.addEventListener("click",function(){
         count.value = total;
         if(total < 0){
           boton.disabled = true; 
-          alert("pasaste el limite");
+        }
+
+        if (total < 120){
+          count.setAttribute('style','color:red');
         }
       }  
     
