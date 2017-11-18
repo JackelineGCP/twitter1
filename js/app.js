@@ -36,13 +36,15 @@ boton.addEventListener("click",function(){
         total = 140 - contador ;
         count.value = total;
         if(total < 0){
-          boton.disabled = true; 
+          boton.disabled = true;       
+          count.setAttribute('style','color:blue');
+        } else {
+          if (total < 120){
+            count.setAttribute('style','color:red');
+          }else if(total < 130){
+            count.setAttribute('style','color:green');
+          } 
         }
-
-        if (total < 120){
-          count.setAttribute('style','color:red');
-        }
-      }  
-    
+      }   
     });
 });
