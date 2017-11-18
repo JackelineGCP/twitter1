@@ -13,23 +13,31 @@ textconte.setAttribute('style','visibility:hidden');
 //defino mis eventos
 boton.addEventListener("click",function(){
   textconte.setAttribute('style','visibility:visible');
+  
   var contenido = letter.value;
+  contenido = contenido.trim(); // quita los espacios vacios
+
   if(contenido.length != 0){
     textconte.value = contenido;
 
   }else{
-    boton.setAttribute("disable",true);
-       }
+    textconte.setAttribute('style','visibility:hidden');
+    boton.disabled = true; 
+      }
   });
 //Version 0.0.2
   window.addEventListener("keypress", function(e){
     var contenido = String.fromCharCode(e.keyCode);
     contenido = contenido.trim(); // quita los espacios vacios
       if(contenido.length != 0){
-        boton.setAttribute("disable",false);
+        boton.disabled = false; 
         contador = contador + 1;
         total = 140 - contador ;
         count.value = total;
+        if(total < 0){
+          boton.disabled = true; 
+          alert("pasaste el limite");
+        }
       }  
     
     });
