@@ -51,4 +51,9 @@ h3{
   width: 80px;
   color: white;
 }
- 
+
+.textarea{  
+  overflow:hidden;
+  margin:20px auto;
+  display:block;
+}

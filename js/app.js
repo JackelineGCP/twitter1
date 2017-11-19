@@ -8,6 +8,8 @@ var count =  document.getElementById("count");
 var contador = 0;
 var total;
 
+var textarea = document.querySelector('textarea');
+
 textconte.setAttribute('style','visibility:hidden');
 count.setAttribute('style','color:blue');
 
@@ -30,6 +32,18 @@ boton.addEventListener("click",function(){
   window.addEventListener("keypress", function(e){
     var contenido = String.fromCharCode(e.keyCode);
     contenido = contenido.trim(); // quita los espacios vacios
+
+    if (e.keyCode ==13){
+      
+      textconte.setAttribute('rows','');
+      
+      $('#textconte').focus(function(){
+        $(this).attr('rows', '4');
+      });
+
+      
+    } else{
+
       if(contenido.length != 0){
         boton.disabled = false; 
         contador = contador + 1;
@@ -45,6 +59,17 @@ boton.addEventListener("click",function(){
             count.setAttribute('style','color:green');
           } 
         }
-      }   
+      }
+    }      
     });
+
+textarea.addEventListener('keydown', autosize);
+     
+function autosize(){
+  var el = this;
+  setTimeout(function(){
+    el.style.cssText = 'height:auto; padding:0';
+    el.style.cssText = 'height:' + el.scrollHeight + 'px';
+    },0);
+  }
 });
