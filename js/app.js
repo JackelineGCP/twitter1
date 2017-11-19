@@ -22,11 +22,10 @@ boton.addEventListener("click",function(){
 
   if(contenido.length != 0){
     textconte.value = contenido;
-
   }else{
     textconte.setAttribute('style','visibility:hidden');
     boton.disabled = true; 
-      }
+    }
   });
 //Version 0.0.2
   window.addEventListener("keypress", function(e){
@@ -34,16 +33,11 @@ boton.addEventListener("click",function(){
     contenido = contenido.trim(); // quita los espacios vacios
 
     if (e.keyCode ==13){
-      
       textconte.setAttribute('rows','');
-      
       $('#textconte').focus(function(){
         $(this).attr('rows', '4');
       });
-
-      
     } else{
-
       if(contenido.length != 0){
         boton.disabled = false; 
         contador = contador + 1;
@@ -61,7 +55,7 @@ boton.addEventListener("click",function(){
         }
       }
     }      
-    });
+  });
 
 textarea.addEventListener('keydown', autosize);
      
