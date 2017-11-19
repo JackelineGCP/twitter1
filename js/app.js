@@ -21,7 +21,10 @@ boton.addEventListener("click",function(){
   contenido = contenido.trim(); // quita los espacios vacios
 
   if(contenido.length != 0){
-    textconte.value = contenido;
+
+    textconte.value = contenido + "\\n" + moment().format('LT');
+     
+
   }else{
     textconte.setAttribute('style','visibility:hidden');
     boton.disabled = true; 
@@ -66,4 +69,9 @@ function autosize(){
     el.style.cssText = 'height:' + el.scrollHeight + 'px';
     },0);
   }
+
+
+
+
 });
+ 
