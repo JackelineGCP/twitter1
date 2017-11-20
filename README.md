@@ -36,7 +36,7 @@ Si la cantidad de caracteres ingresados (sin dar un enter), supera al tamaño de
 Agregar la hora en que se publicó el tweet. En el formato de 24 horas: hh:mm.
 
 ### Image
-![Con titulo](../assets/images/twiteer.png "Twiteer")
+![Con titulo](assets/images/twiteer.png "Twiteer")
 
 
 ### Author
