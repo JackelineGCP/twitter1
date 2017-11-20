@@ -20,7 +20,7 @@ boton.addEventListener("click",function(){
   contenido = contenido.trim(); // quita los espacios vacios
 
   if(contenido.length != 0){
-    textconte.value = contenido + "\\n" + moment().format('LT');
+    textconte.value = contenido + " " + moment().format('LT');
   }else{
     textconte.setAttribute('style','visibility:hidden');
     boton.disabled = true; 
